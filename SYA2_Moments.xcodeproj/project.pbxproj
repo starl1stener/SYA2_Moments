@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		18269BC31DD212400065D028 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18269BC21DD212400065D028 /* AppDelegate.swift */; };
-		18269BC51DD212400065D028 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18269BC41DD212400065D028 /* ViewController.swift */; };
 		18269BC81DD212400065D028 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18269BC61DD212400065D028 /* Main.storyboard */; };
 		18269BCA1DD212400065D028 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18269BC91DD212400065D028 /* Assets.xcassets */; };
 		18269BCD1DD212400065D028 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18269BCB1DD212400065D028 /* LaunchScreen.storyboard */; };
@@ -24,7 +23,6 @@
 		0CD58B318AA00F27968B0348 /* Pods-SYA2_Moments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYA2_Moments.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SYA2_Moments/Pods-SYA2_Moments.debug.xcconfig"; sourceTree = "<group>"; };
 		18269BBF1DD212400065D028 /* SYA2_Moments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SYA2_Moments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18269BC21DD212400065D028 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		18269BC41DD212400065D028 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		18269BC71DD212400065D028 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18269BC91DD212400065D028 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18269BCC1DD212400065D028 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -75,7 +73,6 @@
 			children = (
 				18269BDA1DD21F530065D028 /* Model */,
 				18269BC21DD212400065D028 /* AppDelegate.swift */,
-				18269BC41DD212400065D028 /* ViewController.swift */,
 				18269BC61DD212400065D028 /* Main.storyboard */,
 				18269BC91DD212400065D028 /* Assets.xcassets */,
 				18269BCB1DD212400065D028 /* LaunchScreen.storyboard */,
@@ -238,7 +235,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				18269BDC1DD21F5F0065D028 /* User.swift in Sources */,
-				18269BC51DD212400065D028 /* ViewController.swift in Sources */,
 				18269BD91DD219DE0065D028 /* FirebaseReference.swift in Sources */,
 				18269BDE1DD224DB0065D028 /* FIRImage.swift in Sources */,
 				18269BC31DD212400065D028 /* AppDelegate.swift in Sources */,

@@ -28,13 +28,26 @@ extension FIRImage {
     
     func saveProfileImage(_ userUID: String, _ completion: @escaping (Error?) -> Void) {
         
+        let resisedImage = image.resized()
+        let imageData = UIImageJPEGRepresentation(resisedImage, 0.9)
+        
+        ref = StorageReference.profileImages.reference().child(userUID)
+        
+        downloadLink = ref.description
+        
+        ref.put(imageData!, metadata: nil) { (metaData, error) in
+            
+            completion(error)
+        }
+        
+        
     }
 }
 
 
 private extension UIImage {
     
-    func resize() -> UIImage {
+    func resized() -> UIImage {
         let height: CGFloat = 800.0
         let ratio = self.size.width / self.size.height
         
