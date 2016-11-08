@@ -1,0 +1,6 @@
+framework module Pods_SYA2_Moments {
+  umbrella header "Pods-SYA2_Moments-umbrella.h"
+
+  export *
+  module * { export * }
+}
