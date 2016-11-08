@@ -14,6 +14,9 @@
 		18269BCD1DD212400065D028 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18269BCB1DD212400065D028 /* LaunchScreen.storyboard */; };
 		18269BD51DD215550065D028 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 18269BD41DD215550065D028 /* Podfile */; };
 		18269BD71DD218030065D028 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18269BD61DD218030065D028 /* GoogleService-Info.plist */; };
+		18269BD91DD219DE0065D028 /* FirebaseReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18269BD81DD219DE0065D028 /* FirebaseReference.swift */; };
+		18269BDC1DD21F5F0065D028 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18269BDB1DD21F5F0065D028 /* User.swift */; };
+		18269BDE1DD224DB0065D028 /* FIRImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18269BDD1DD224DB0065D028 /* FIRImage.swift */; };
 		427DB4159B1241156B8CA38A /* Pods_SYA2_Moments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC8AA868D913EA3D4DB5C92 /* Pods_SYA2_Moments.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +31,9 @@
 		18269BCE1DD212400065D028 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18269BD41DD215550065D028 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		18269BD61DD218030065D028 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		18269BD81DD219DE0065D028 /* FirebaseReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseReference.swift; sourceTree = "<group>"; };
+		18269BDB1DD21F5F0065D028 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		18269BDD1DD224DB0065D028 /* FIRImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRImage.swift; sourceTree = "<group>"; };
 		583259011020FD130EC7392A /* Pods-SYA2_Moments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYA2_Moments.release.xcconfig"; path = "Pods/Target Support Files/Pods-SYA2_Moments/Pods-SYA2_Moments.release.xcconfig"; sourceTree = "<group>"; };
 		9FC8AA868D913EA3D4DB5C92 /* Pods_SYA2_Moments.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SYA2_Moments.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -67,14 +73,25 @@
 		18269BC11DD212400065D028 /* SYA2_Moments */ = {
 			isa = PBXGroup;
 			children = (
+				18269BDA1DD21F530065D028 /* Model */,
 				18269BC21DD212400065D028 /* AppDelegate.swift */,
 				18269BC41DD212400065D028 /* ViewController.swift */,
 				18269BC61DD212400065D028 /* Main.storyboard */,
 				18269BC91DD212400065D028 /* Assets.xcassets */,
 				18269BCB1DD212400065D028 /* LaunchScreen.storyboard */,
 				18269BCE1DD212400065D028 /* Info.plist */,
+				18269BD81DD219DE0065D028 /* FirebaseReference.swift */,
 			);
 			path = SYA2_Moments;
+			sourceTree = "<group>";
+		};
+		18269BDA1DD21F530065D028 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18269BDB1DD21F5F0065D028 /* User.swift */,
+				18269BDD1DD224DB0065D028 /* FIRImage.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		6267C60C7BB91B2FE63DDFC7 /* Pods */ = {
@@ -220,7 +237,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18269BDC1DD21F5F0065D028 /* User.swift in Sources */,
 				18269BC51DD212400065D028 /* ViewController.swift in Sources */,
+				18269BD91DD219DE0065D028 /* FirebaseReference.swift in Sources */,
+				18269BDE1DD224DB0065D028 /* FIRImage.swift in Sources */,
 				18269BC31DD212400065D028 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
