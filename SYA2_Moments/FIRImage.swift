@@ -42,7 +42,66 @@ extension FIRImage {
         
         
     }
+    
+    func save(_ uid: String, completion: @escaping (Error?) -> Void) {
+        
+        // ~/images/uid
+        
+        let resizedImage = image.resized()
+        let imageData = UIImageJPEGRepresentation(resizedImage, 0.9)
+        
+        ref = StorageReference.images.reference().child(uid)
+        
+        ref.put(imageData!, metadata: nil) { (metadata, error) in
+            
+            completion(error)
+            
+        }
+        
+    }
 }
+
+
+
+extension FIRImage {
+    class func downloadProfileImage(_ uid: String, completion: @escaping (UIImage?, Error?) -> Void) {
+        
+        StorageReference.profileImages.reference().child(uid).data(withMaxSize: 1 * 1024 * 1024) { (imageData, error) in
+            
+            if error == nil && imageData != nil {
+                let image = UIImage(data: imageData!)
+                completion(image, error)
+            } else {
+                completion(nil, error)
+            }
+            
+        }
+        
+    }
+    
+    
+    class func downloadImage(_ uid: String, completion: @escaping (UIImage?, Error?) -> Void) {
+        
+        StorageReference.images.reference().child(uid).data(withMaxSize: 1 * 1024 * 1024) {
+            imageData, error in
+            
+            if error == nil && imageData != nil {
+                let image = UIImage(data: imageData!)
+                completion(image, error)
+            } else {
+                completion(nil, error)
+            }
+            
+            
+        }
+        
+        
+    }
+    
+    
+    
+}
+
 
 
 private extension UIImage {

@@ -12,12 +12,12 @@ import Firebase
 class User {
     
     let uid: String
-    let username: String
-    let fullName: String
-    let bio: String
-    let website: String
+    var username: String
+    var fullName: String
+    var bio: String
+    var website: String
+    var profileImage: UIImage?
     
-    let profileImage: UIImage?
     var follows: [User]
     var followedBy: [User]
     
@@ -38,7 +38,41 @@ class User {
         
     }
     
-    func save() {
+    init(dictionary: [String: Any]) {
+        self.uid = dictionary["uid"] as! String
+        self.username = dictionary["username"] as! String
+        self.fullName = dictionary["fullName"] as! String
+        self.bio = dictionary["bio"] as! String
+        self.website = dictionary["website"] as! String
+        
+        // follows
+        
+        self.follows = []
+        
+        if let followsDict = dictionary["follows"] as? [String: Any] {
+            for (_, userDict) in followsDict {
+                if let userDict = userDict as? [String : Any] {
+                    self.follows.append(User(dictionary: userDict))
+                }
+            }
+        }
+        
+        // followed by
+        
+        self.followedBy = []
+        
+        if let followedByDict = dictionary["followedBy"] as? [String: Any] {
+            for (_, userDict) in followedByDict {
+                if let userDict = userDict as? [String: Any] {
+                    self.followedBy.append(User(dictionary: userDict))
+                }
+            }
+        }
+        
+        
+    }
+    
+    func save(completion: @escaping (Error?) -> Void) {
         // 1
         let ref = DatabaseReference.users(uid: uid).reference()
         ref.setValue(toDictionary())
@@ -55,6 +89,14 @@ class User {
         
         // 4 - save the profile image
         
+        if let profileImage = self.profileImage {
+            let firImage = FIRImage(image: profileImage)
+            firImage.saveProfileImage(self.uid, { (error) in
+                
+                completion(error)
+                
+            })
+        }
         
     }
     
