@@ -29,7 +29,6 @@ class NewsfeedTableViewController: UITableViewController {
             if let user = user {
                 
                 // signed in
-                print("NewsfeedVC: signed in")
                 
                 DatabaseReference.users(uid: user.uid).reference().observeSingleEvent(of: .value, with: { (snapshot) in
                     if let userDict = snapshot.value as? [String : Any] {
@@ -38,8 +37,6 @@ class NewsfeedTableViewController: UITableViewController {
                 })
             } else {
                 
-                print("NewsfeedVC: not signed in")
-
                 self.performSegue(withIdentifier: Storyboard.showWelcome, sender: nil)
                 
             }
