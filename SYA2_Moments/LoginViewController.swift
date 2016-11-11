@@ -27,21 +27,19 @@ class LoginViewController: UITableViewController {
 
     @IBAction func actionLoginDIdTap() {
         
-        if emailTextField.text != ""
-            && (passwordTextField.text?.characters.count)! > 6 {
+        if emailTextField.text != "" && (passwordTextField.text?.characters.count)! > 6 {
+            let email = emailTextField.text!
+            let password = passwordTextField.text!
             
-            FIRAuth.auth()?.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (firUser, error) in
-                
-                if error != nil {
-                    self.showAlert(title: "Error", message: "\(error?.localizedDescription)", buttonTitle: "OK")
+            FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (firUser, error) in
+                if let error = error {
+                    self.showAlert(title: "Oops!", message: error.localizedDescription, buttonTitle: "OK")
                 } else {
-                    print("Login successful")
                     self.dismiss(animated: true, completion: nil)
                 }
-                
             })
         }
-        
+
         
     }
     

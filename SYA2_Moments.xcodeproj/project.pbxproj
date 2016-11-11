@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		154919531DD5B81E002E16BA /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154919521DD5B81E002E16BA /* Media.swift */; };
 		18269BC31DD212400065D028 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18269BC21DD212400065D028 /* AppDelegate.swift */; };
 		18269BC81DD212400065D028 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18269BC61DD212400065D028 /* Main.storyboard */; };
 		18269BCA1DD212400065D028 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18269BC91DD212400065D028 /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		0CD58B318AA00F27968B0348 /* Pods-SYA2_Moments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYA2_Moments.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SYA2_Moments/Pods-SYA2_Moments.debug.xcconfig"; sourceTree = "<group>"; };
+		154919521DD5B81E002E16BA /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		18269BBF1DD212400065D028 /* SYA2_Moments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SYA2_Moments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18269BC21DD212400065D028 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18269BC71DD212400065D028 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -91,7 +93,6 @@
 				18269BCB1DD212400065D028 /* LaunchScreen.storyboard */,
 				18269BC91DD212400065D028 /* Assets.xcassets */,
 				18269BCE1DD212400065D028 /* Info.plist */,
-				18269BD81DD219DE0065D028 /* FirebaseReference.swift */,
 				1884E5821DD5094D00994BC5 /* Profile Tab */,
 				1884E57C1DD5028A00994BC5 /* Newsfeed */,
 				1884E57B1DD5027500994BC5 /* User Authentication */,
@@ -105,6 +106,8 @@
 			children = (
 				18269BDB1DD21F5F0065D028 /* User.swift */,
 				18269BDD1DD224DB0065D028 /* FIRImage.swift */,
+				18269BD81DD219DE0065D028 /* FirebaseReference.swift */,
+				154919521DD5B81E002E16BA /* Media.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				154919531DD5B81E002E16BA /* Media.swift in Sources */,
 				1884E57F1DD502D600994BC5 /* LoginViewController.swift in Sources */,
 				18269BE21DD257300065D028 /* NewsfeedTableViewController.swift in Sources */,
 				1884E5811DD5094400994BC5 /* ProfileViewController.swift in Sources */,
