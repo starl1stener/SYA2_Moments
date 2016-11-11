@@ -104,11 +104,11 @@ class User {
     
     func toDictionary() -> [String: Any] {
         return [
-            "uid": uid,
+            "uid":      uid,
             "username": username,
             "fullName": fullName,
-            "bio": bio,
-            "website": website
+            "bio":      bio,
+            "website":  website
         ]
     }
 }
