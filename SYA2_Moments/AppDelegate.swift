@@ -21,13 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FIRApp.configure()
         
-        let dummyUser = User(uid: "123", username: "myUserNameDummy", fullName: "My Dummy User", bio: "My Dummy User", website: "dummy.com", follows: [], followedBy: [], profileImage: UIImage(named: "1"))
-        
-        dummyUser.save { (error) in
-            if error != nil {
-                print(error?.localizedDescription)
-            }
-        }
         
         return true
     }

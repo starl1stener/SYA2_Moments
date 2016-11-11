@@ -18,11 +18,9 @@ class WelcomeViewController: UIViewController {
         FIRAuth.auth()?.addStateDidChangeListener({ (auth, user) in
             
             if let user = user {
-                print("WelcomeVC: signed in")
+                
                 self.dismiss(animated: false, completion: nil)
             } else {
-                
-                print("WelcomeVC: not signed in")
                 
             }
         })

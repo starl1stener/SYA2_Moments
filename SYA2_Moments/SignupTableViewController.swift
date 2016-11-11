@@ -101,8 +101,6 @@ class SignupTableViewController: UITableViewController {
     
     @IBAction func actionChangeProfilePhotoDidTap() {
         
-        print("actionChangeProfilePhotoDidTap")
-        
         imagePickerHelper = ImagePickerHelper(viewController: self, completion: { (image) in
             self.profileImageView.image = image
             self.profileImage = image
