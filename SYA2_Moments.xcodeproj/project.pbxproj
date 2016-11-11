@@ -23,6 +23,8 @@
 		18269BE81DD25D590065D028 /* ImagePickerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18269BE71DD25D590065D028 /* ImagePickerHelper.swift */; };
 		1884E57F1DD502D600994BC5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1884E57E1DD502D600994BC5 /* LoginViewController.swift */; };
 		1884E5811DD5094400994BC5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1884E5801DD5094400994BC5 /* ProfileViewController.swift */; };
+		1884E5841DD5D6B900994BC5 /* DummyPostComposerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1884E5831DD5D6B900994BC5 /* DummyPostComposerViewController.swift */; };
+		1884E5871DD5D6DE00994BC5 /* PostComposerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1884E5861DD5D6DE00994BC5 /* PostComposerViewController.swift */; };
 		427DB4159B1241156B8CA38A /* Pods_SYA2_Moments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC8AA868D913EA3D4DB5C92 /* Pods_SYA2_Moments.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,8 @@
 		1884E57A1DD3B61F00994BC5 /* SYA2_Moments.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SYA2_Moments.entitlements; sourceTree = "<group>"; };
 		1884E57E1DD502D600994BC5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1884E5801DD5094400994BC5 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		1884E5831DD5D6B900994BC5 /* DummyPostComposerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyPostComposerViewController.swift; sourceTree = "<group>"; };
+		1884E5861DD5D6DE00994BC5 /* PostComposerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostComposerViewController.swift; sourceTree = "<group>"; };
 		583259011020FD130EC7392A /* Pods-SYA2_Moments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYA2_Moments.release.xcconfig"; path = "Pods/Target Support Files/Pods-SYA2_Moments/Pods-SYA2_Moments.release.xcconfig"; sourceTree = "<group>"; };
 		9FC8AA868D913EA3D4DB5C92 /* Pods_SYA2_Moments.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SYA2_Moments.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -94,6 +98,7 @@
 				18269BC91DD212400065D028 /* Assets.xcassets */,
 				18269BCE1DD212400065D028 /* Info.plist */,
 				1884E5821DD5094D00994BC5 /* Profile Tab */,
+				1884E5851DD5D6BE00994BC5 /* Post Composer Tab */,
 				1884E57C1DD5028A00994BC5 /* Newsfeed */,
 				1884E57B1DD5027500994BC5 /* User Authentication */,
 				1884E57D1DD5029200994BC5 /* Helper Classes */,
@@ -144,6 +149,15 @@
 				1884E5801DD5094400994BC5 /* ProfileViewController.swift */,
 			);
 			name = "Profile Tab";
+			sourceTree = "<group>";
+		};
+		1884E5851DD5D6BE00994BC5 /* Post Composer Tab */ = {
+			isa = PBXGroup;
+			children = (
+				1884E5831DD5D6B900994BC5 /* DummyPostComposerViewController.swift */,
+				1884E5861DD5D6DE00994BC5 /* PostComposerViewController.swift */,
+			);
+			name = "Post Composer Tab";
 			sourceTree = "<group>";
 		};
 		6267C60C7BB91B2FE63DDFC7 /* Pods */ = {
@@ -295,8 +309,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				154919531DD5B81E002E16BA /* Media.swift in Sources */,
+				1884E5841DD5D6B900994BC5 /* DummyPostComposerViewController.swift in Sources */,
 				1884E57F1DD502D600994BC5 /* LoginViewController.swift in Sources */,
 				18269BE21DD257300065D028 /* NewsfeedTableViewController.swift in Sources */,
+				1884E5871DD5D6DE00994BC5 /* PostComposerViewController.swift in Sources */,
 				1884E5811DD5094400994BC5 /* ProfileViewController.swift in Sources */,
 				18269BE41DD257430065D028 /* SignupTableViewController.swift in Sources */,
 				18269BDC1DD21F5F0065D028 /* User.swift in Sources */,
