@@ -32,8 +32,13 @@ class MediaHeaderCell: UITableViewCell {
         
         profileImageView.image = #imageLiteral(resourceName: "icon-defaultAvatar")
         
+        let headerImageKey = "\(media.createdBy.uid)-headerImage"
+
         
-        if let image = cache?.object(forKey: "\(self.media.createdBy.uid)-headerImage") as? UIImage {
+//        if let image = cache?.object(forKey: "\(self.media.createdBy.uid)-headerImage") as? UIImage {
+        
+        if let image = cache?.object(forKey: headerImageKey) as? UIImage {
+
             self.profileImageView.image = image
             
         } else {
@@ -44,7 +49,8 @@ class MediaHeaderCell: UITableViewCell {
                     
                     // caching profile image
                     // TODO: comment about need add ! unwrap
-                    self?.cache?.setObject(image, forKey: "\((self?.media.createdBy.uid)!)-headerImage")
+//                    self?.cache?.setObject(image, forKey: "\((self?.media.createdBy.uid)!)-headerImage")
+                    self?.cache?.setImage(image, forKey: headerImageKey)
                     
                 } else if error != nil {
                     print("Error occured: \(error?.localizedDescription)")
