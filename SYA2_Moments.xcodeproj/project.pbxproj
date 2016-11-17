@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		154919531DD5B81E002E16BA /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154919521DD5B81E002E16BA /* Media.swift */; };
+		15ABA8701DDDB17100FE7B57 /* MediaHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15ABA86F1DDDB17100FE7B57 /* MediaHeaderCell.swift */; };
 		18269BC31DD212400065D028 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18269BC21DD212400065D028 /* AppDelegate.swift */; };
 		18269BC81DD212400065D028 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18269BC61DD212400065D028 /* Main.storyboard */; };
 		18269BCA1DD212400065D028 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18269BC91DD212400065D028 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		0CD58B318AA00F27968B0348 /* Pods-SYA2_Moments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYA2_Moments.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SYA2_Moments/Pods-SYA2_Moments.debug.xcconfig"; sourceTree = "<group>"; };
 		154919521DD5B81E002E16BA /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		15ABA86F1DDDB17100FE7B57 /* MediaHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaHeaderCell.swift; sourceTree = "<group>"; };
 		18269BBF1DD212400065D028 /* SYA2_Moments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SYA2_Moments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18269BC21DD212400065D028 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18269BC71DD212400065D028 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -94,14 +96,14 @@
 				18269BDA1DD21F530065D028 /* Model */,
 				18269BC21DD212400065D028 /* AppDelegate.swift */,
 				18269BC61DD212400065D028 /* Main.storyboard */,
-				18269BCB1DD212400065D028 /* LaunchScreen.storyboard */,
-				18269BC91DD212400065D028 /* Assets.xcassets */,
-				18269BCE1DD212400065D028 /* Info.plist */,
 				1884E5821DD5094D00994BC5 /* Profile Tab */,
 				1884E5851DD5D6BE00994BC5 /* Post Composer Tab */,
 				1884E57C1DD5028A00994BC5 /* Newsfeed */,
 				1884E57B1DD5027500994BC5 /* User Authentication */,
 				1884E57D1DD5029200994BC5 /* Helper Classes */,
+				18269BCB1DD212400065D028 /* LaunchScreen.storyboard */,
+				18269BC91DD212400065D028 /* Assets.xcassets */,
+				18269BCE1DD212400065D028 /* Info.plist */,
 			);
 			path = SYA2_Moments;
 			sourceTree = "<group>";
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				18269BE11DD257300065D028 /* NewsfeedTableViewController.swift */,
+				15ABA86F1DDDB17100FE7B57 /* MediaHeaderCell.swift */,
 			);
 			name = Newsfeed;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				1884E57F1DD502D600994BC5 /* LoginViewController.swift in Sources */,
 				18269BE21DD257300065D028 /* NewsfeedTableViewController.swift in Sources */,
 				1884E5871DD5D6DE00994BC5 /* PostComposerViewController.swift in Sources */,
+				15ABA8701DDDB17100FE7B57 /* MediaHeaderCell.swift in Sources */,
 				1884E5811DD5094400994BC5 /* ProfileViewController.swift in Sources */,
 				18269BE41DD257430065D028 /* SignupTableViewController.swift in Sources */,
 				18269BDC1DD21F5F0065D028 /* User.swift in Sources */,

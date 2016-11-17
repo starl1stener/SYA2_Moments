@@ -372,7 +372,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="57" id="uAr-9t-ko2">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="57" id="uAr-9t-ko2" customClass="MediaHeaderCell" customModule="SYA2_Moments" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="57"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uAr-9t-ko2" id="TJZ-tX-Uk3">
@@ -394,16 +394,28 @@
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QnV-bQ-KBV">
+                                            <rect key="frame" x="299" y="14" width="68" height="28"/>
+                                            <state key="normal" title="   Follow   "/>
+                                        </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="QnV-bQ-KBV" firstAttribute="top" secondItem="TJZ-tX-Uk3" secondAttribute="top" constant="14" id="21H-ZI-Hf5"/>
                                         <constraint firstAttribute="bottom" secondItem="pHH-ow-it8" secondAttribute="bottom" constant="10.5" id="UlE-E5-65M"/>
+                                        <constraint firstAttribute="trailing" secondItem="QnV-bQ-KBV" secondAttribute="trailing" constant="8" id="ZNn-5I-Gno"/>
                                         <constraint firstItem="qED-TC-TZX" firstAttribute="top" secondItem="TJZ-tX-Uk3" secondAttribute="top" constant="8" id="pU5-ad-BMj"/>
                                         <constraint firstAttribute="bottom" secondItem="qED-TC-TZX" secondAttribute="bottom" constant="8.5" id="q2k-6x-Txt"/>
+                                        <constraint firstAttribute="bottom" secondItem="QnV-bQ-KBV" secondAttribute="bottom" constant="14" id="qKb-ur-mHS"/>
                                         <constraint firstItem="qED-TC-TZX" firstAttribute="leading" secondItem="TJZ-tX-Uk3" secondAttribute="leading" constant="12" id="ry3-Q6-d8M"/>
                                         <constraint firstItem="pHH-ow-it8" firstAttribute="top" secondItem="TJZ-tX-Uk3" secondAttribute="top" constant="10" id="srD-2y-a8F"/>
                                         <constraint firstItem="pHH-ow-it8" firstAttribute="leading" secondItem="qED-TC-TZX" secondAttribute="trailing" constant="8" id="v8V-uc-p1S"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="followButton" destination="QnV-bQ-KBV" id="h0k-N0-948"/>
+                                    <outlet property="profileImageView" destination="qED-TC-TZX" id="2cc-fX-SW9"/>
+                                    <outlet property="usernameButton" destination="pHH-ow-it8" id="5Ls-wh-2Pr"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="578" id="4Pc-qp-gWl">
                                 <rect key="frame" x="0.0" y="85" width="375" height="578"/>
@@ -936,13 +948,20 @@
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PiW-jz-cj7">
+                                            <rect key="frame" x="299" y="14" width="68" height="28"/>
+                                            <state key="normal" title="   Follow   "/>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="HAg-LE-264" firstAttribute="leading" secondItem="NGV-9c-xkf" secondAttribute="leading" constant="12" id="5hn-Ft-9Cf"/>
+                                        <constraint firstAttribute="bottom" secondItem="PiW-jz-cj7" secondAttribute="bottom" constant="14" id="5vu-XS-24Q"/>
                                         <constraint firstItem="8rX-p1-dBA" firstAttribute="leading" secondItem="HAg-LE-264" secondAttribute="trailing" constant="8" id="758-bC-ZN2"/>
                                         <constraint firstItem="8rX-p1-dBA" firstAttribute="top" secondItem="NGV-9c-xkf" secondAttribute="top" constant="10" id="amq-sH-c7n"/>
+                                        <constraint firstAttribute="trailing" secondItem="PiW-jz-cj7" secondAttribute="trailing" constant="8" id="dfm-mi-yax"/>
                                         <constraint firstItem="HAg-LE-264" firstAttribute="top" secondItem="NGV-9c-xkf" secondAttribute="top" constant="8" id="hxe-XH-tH6"/>
                                         <constraint firstAttribute="bottom" secondItem="HAg-LE-264" secondAttribute="bottom" constant="8.5" id="jwq-Kb-77A"/>
+                                        <constraint firstItem="PiW-jz-cj7" firstAttribute="top" secondItem="NGV-9c-xkf" secondAttribute="top" constant="14" id="qoN-I6-NQN"/>
                                         <constraint firstAttribute="bottom" secondItem="8rX-p1-dBA" secondAttribute="bottom" constant="10.5" id="qzT-RH-mcn"/>
                                     </constraints>
                                 </tableViewCellContentView>
