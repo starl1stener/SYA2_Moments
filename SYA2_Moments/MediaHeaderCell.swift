@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SAMCache
 
 class MediaHeaderCell: UITableViewCell {
     
@@ -25,18 +26,35 @@ class MediaHeaderCell: UITableViewCell {
         }
     }
     
+    var cache = SAMCache.shared()
+    
     func updateUI() {
-        media.createdBy.downloadProfilePicture { [weak self] (image, error) in
-            if let image = image {
-                self?.profileImageView.image = image
-            } else {
-                print("Error occured: \(error?.localizedDescription)")
+        
+        profileImageView.image = #imageLiteral(resourceName: "icon-defaultAvatar")
+        
+        
+        if let image = cache?.object(forKey: "\(self.media.createdBy.uid)-headerImage") as? UIImage {
+            self.profileImageView.image = image
+            
+        } else {
+            
+            media.createdBy.downloadProfilePicture { [weak self] (image, error) in
+                if let image = image {
+                    self?.profileImageView.image = image
+                    
+                    // caching profile image
+                    // TODO: comment about need add ! unwrap
+                    self?.cache?.setObject(image, forKey: "\((self?.media.createdBy.uid)!)-headerImage")
+                    
+                } else if error != nil {
+                    print("Error occured: \(error?.localizedDescription)")
+                }
             }
         }
         
+        
         profileImageView.layer.cornerRadius = profileImageView.bounds.width/2
         profileImageView.clipsToBounds = true
-        
         
         usernameButton.setTitle(media.createdBy.username, for: [])
         

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SAMCache
 
 class MediaTableViewCell: UITableViewCell {
     
@@ -29,19 +30,31 @@ class MediaTableViewCell: UITableViewCell {
         }
     }
     
+    var cache = SAMCache.shared()
+    
     
     func updateUI() {
-        self.imageView?.image = nil
+        self.mediaImageView.image = nil
         
-        media.downloadMediaImage { [weak self] (image, error) in
-            if let image = image {
-                self?.mediaImageView.image = image
-            } else {
-                
-                print("Error occured: \(error?.localizedDescription)")
-            }
+        if let image = cache?.object(forKey: "\(self.media.uid)") as? UIImage {
+            self.mediaImageView.image = image
+        } else {
             
+            media.downloadMediaImage { [weak self] (image, error) in
+                if let image = image {
+                    self?.mediaImageView.image = image
+                    
+                    // caching image
+                    self?.cache?.setObject(image, forKey: "\((self?.media.uid)!)")
+                    
+                } else if error != nil {
+                    
+                    print("Error occured: \(error?.localizedDescription)")
+                }
+                
+            }
         }
+        
         
         captionLabel.text = media.caption
         likeButton.setImage(UIImage(named: "icon-like"), for: [])
