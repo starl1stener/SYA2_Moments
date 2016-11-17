@@ -372,7 +372,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="57" id="uAr-9t-ko2" customClass="MediaHeaderCell" customModule="SYA2_Moments" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MediaHeaderCell" rowHeight="57" id="uAr-9t-ko2" customClass="MediaHeaderCell" customModule="SYA2_Moments" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="57"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uAr-9t-ko2" id="TJZ-tX-Uk3">
@@ -417,7 +417,7 @@
                                     <outlet property="usernameButton" destination="pHH-ow-it8" id="5Ls-wh-2Pr"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="578" id="4Pc-qp-gWl" customClass="MediaTableViewCell" customModule="SYA2_Moments" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MediaCell" rowHeight="578" id="4Pc-qp-gWl" customClass="MediaTableViewCell" customModule="SYA2_Moments" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="85" width="375" height="578"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Pc-qp-gWl" id="sLL-zv-d4y">
@@ -459,6 +459,7 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="commentDidTap" destination="4Pc-qp-gWl" eventType="touchUpInside" id="WBc-5U-yoo"/>
+                                                        <segue destination="3ef-fA-rTS" kind="show" identifier="ShowCommentComposer" id="OLq-vt-Heg"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrM-1n-dQB">
@@ -568,7 +569,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
-                        <segue destination="MPj-g1-wqs" kind="show" identifier="ShowMediaDetail" id="jJt-H0-qiN">
+                        <segue destination="MPj-g1-wqs" kind="show" identifier="ShowMediaDetailSegue" id="jJt-H0-qiN">
                             <nil key="action"/>
                         </segue>
                         <segue destination="ucv-so-bwX" kind="presentation" identifier="ShowWelcomeViewController" id="qZX-e3-7BD"/>
@@ -951,7 +952,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="57" id="Z3I-CK-jqB" customClass="MediaHeaderCell" customModule="SYA2_Moments" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MediaHeaderCell" rowHeight="57" id="Z3I-CK-jqB" customClass="MediaHeaderCell" customModule="SYA2_Moments" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="57"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z3I-CK-jqB" id="NGV-9c-xkf">
@@ -996,7 +997,7 @@
                                     <outlet property="usernameButton" destination="8rX-p1-dBA" id="q0Y-uz-0yn"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="578" id="fcQ-cs-Ch2" customClass="MediaTableViewCell" customModule="SYA2_Moments" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MediaCell" rowHeight="578" id="fcQ-cs-Ch2" customClass="MediaTableViewCell" customModule="SYA2_Moments" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="85" width="375" height="578"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fcQ-cs-Ch2" id="skN-U0-F2U">
@@ -1137,7 +1138,7 @@
                                     <outlet property="viewAllCommentsButton" destination="3rV-tc-1Ku" id="9V2-v5-eNo"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="Trc-2x-Mlr" customClass="CommentTableViewCell" customModule="SYA2_Moments" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" rowHeight="100" id="Trc-2x-Mlr" customClass="CommentTableViewCell" customModule="SYA2_Moments" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="663" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Trc-2x-Mlr" id="dGe-Lk-jTU">
@@ -1218,7 +1219,7 @@
                         <viewControllerLayoutGuide type="bottom" id="1PF-yy-AV7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ENx-5J-Vfk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="t9" translatesAutoresizingMaskIntoConstraints="NO" id="4VX-n4-bDn">
@@ -1237,7 +1238,7 @@
                                 </state>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3Yg-9l-xse">
-                                <rect key="frame" x="60" y="118" width="299" height="730"/>
+                                <rect key="frame" x="60" y="118" width="299" height="630"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
@@ -1445,4 +1446,7 @@
         <image name="logo-da" width="117" height="41"/>
         <image name="t9" width="370" height="370"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="OLq-vt-Heg"/>
+    </inferredMetricsTieBreakers>
 </document>

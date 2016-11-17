@@ -6,7 +6,7 @@
 //  Copyright © 2016 Anton Novoselov. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import Firebase
 
 class Media {
@@ -33,6 +33,46 @@ class Media {
         comments = []
         likes = []
         uid = DatabaseReference.media.reference().childByAutoId().key
+        
+        
+    }
+    
+    init(dictionary: [String: Any]) {
+        
+        uid = dictionary["uid"] as! String
+        type = dictionary["type"] as! String
+        
+        let createdByDict = dictionary["createdBy"] as! [String: Any]
+        createdBy = User(dictionary: createdByDict)
+        
+        caption = dictionary["caption"] as! String
+        
+        createdTime = dictionary["createdTime"] as! Double
+        
+        // getting liked Users
+        self.likes = []
+        
+        if let likedUsers = dictionary["likes"] as? [String: Any] {
+            
+            for (_, userDict) in likedUsers {
+                if let userDict = userDict as? [String: Any] {
+                    self.likes.append(User(dictionary: userDict))
+                }
+            }
+        }
+        
+        // TODO: - why Duc doesn't take comments from dictionary? And just do instead: comments = []
+        // getting Comments
+        self.comments = []
+        
+        if let comments = dictionary["comments"] as? [String: Any] {
+            
+            for comment in comments {
+                if let commentDict = comment.value as? [String: Any] {
+                    self.comments.append(Comment(dictionary: commentDict))
+                }
+            }
+        }
         
         
     }
@@ -108,73 +148,26 @@ extension Media {
 }
 
 
-
-
-class Comment {
-    
-    var mediaUID: String
-    var uid: String
-    
-    var createdTime: Double!
-    var from: User
-    
-    var caption: String
-    var ref: FIRDatabaseReference
-    
-    init(mediaUID: String, from: User, caption: String) {
-        self.mediaUID = mediaUID
-        self.from = from
-        self.caption = caption
-        
-//        self.createdTime = Date().timeIntervalSince1970
-        
-        ref = DatabaseReference.media.reference().child("\(mediaUID)/comments").childByAutoId()
-        
-        uid = ref.key
-    }
-    
-    
-    init(dictionary: [String: Any]) {
-        
-        uid = dictionary["uid"] as! String
-        mediaUID = dictionary["mediaUID"] as! String
-//        createdTime = dictionary["createdTime"] as! Double
-        caption = dictionary["caption"] as! String
-        
-        let userDict = dictionary["from"] as! [String: Any]
-        from = User(dictionary: userDict)
-        
-        
-        ref = DatabaseReference.media.reference().child("\(mediaUID)/comments/\(uid)")
-        
-    }
-    
-    
-    func save() {
-        ref.setValue(toDictionary())
-    }
-    
-    
-    func toDictionary() -> [String: Any] {
-        
-        return [
+extension Media {
+    class func observeNewMedia(_ completion: @escaping (Media) -> Void) {
+        DatabaseReference.media.reference().observe(.childAdded, with: { snapshot in
             
-            "mediaUID":     mediaUID,
-            "uid":          uid,
-//            "createdTime":  createdTime,
-            "createdTime": FIRServerValue.timestamp(),
-            "from":         from.toDictionary(),
-            "caption":      caption
+            let media = Media(dictionary: snapshot.value as! [String: Any])
             
-        ]
-        
-        
+            completion(media)
+            
+        })
     }
-    
 }
 
 
 
+
+extension Media: Equatable { }
+
+func ==(lhs: Media, rhs: Media) -> Bool {
+    return lhs.uid == rhs.uid
+}
 
 
 

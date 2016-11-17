@@ -11,6 +11,7 @@
 		15ABA8701DDDB17100FE7B57 /* MediaHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15ABA86F1DDDB17100FE7B57 /* MediaHeaderCell.swift */; };
 		15ABA8721DDDC0BC00FE7B57 /* MediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15ABA8711DDDC0BC00FE7B57 /* MediaTableViewCell.swift */; };
 		15ABA8741DDDCC4600FE7B57 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15ABA8731DDDCC4600FE7B57 /* CommentTableViewCell.swift */; };
+		18200B371DDDE78C000B0075 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18200B361DDDE78C000B0075 /* Comment.swift */; };
 		18269BC31DD212400065D028 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18269BC21DD212400065D028 /* AppDelegate.swift */; };
 		18269BC81DD212400065D028 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18269BC61DD212400065D028 /* Main.storyboard */; };
 		18269BCA1DD212400065D028 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18269BC91DD212400065D028 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 		15ABA86F1DDDB17100FE7B57 /* MediaHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaHeaderCell.swift; sourceTree = "<group>"; };
 		15ABA8711DDDC0BC00FE7B57 /* MediaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaTableViewCell.swift; sourceTree = "<group>"; };
 		15ABA8731DDDCC4600FE7B57 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		18200B361DDDE78C000B0075 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		18269BBF1DD212400065D028 /* SYA2_Moments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SYA2_Moments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18269BC21DD212400065D028 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18269BC71DD212400065D028 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				18269BDD1DD224DB0065D028 /* FIRImage.swift */,
 				18269BD81DD219DE0065D028 /* FirebaseReference.swift */,
 				154919521DD5B81E002E16BA /* Media.swift */,
+				18200B361DDDE78C000B0075 /* Comment.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				1884E57F1DD502D600994BC5 /* LoginViewController.swift in Sources */,
 				18269BE21DD257300065D028 /* NewsfeedTableViewController.swift in Sources */,
 				15ABA8721DDDC0BC00FE7B57 /* MediaTableViewCell.swift in Sources */,
+				18200B371DDDE78C000B0075 /* Comment.swift in Sources */,
 				1884E5871DD5D6DE00994BC5 /* PostComposerViewController.swift in Sources */,
 				15ABA8701DDDB17100FE7B57 /* MediaHeaderCell.swift in Sources */,
 				1884E5811DD5094400994BC5 /* ProfileViewController.swift in Sources */,
