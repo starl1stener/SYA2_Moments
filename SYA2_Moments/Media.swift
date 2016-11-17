@@ -14,7 +14,7 @@ class Media {
     var uid: String
     let type: String // "image" or "video"
     var caption: String
-    var createdTime: Double
+    var createdTime: Double!
     var createdBy: User
     var likes: [User]
     var comments: [Comment]
@@ -27,7 +27,8 @@ class Media {
         self.mediaImage = image
         self.caption = caption
         
-        createdTime = Date().timeIntervalSince1970 // number of seconds from 1970
+//        createdTime = Date().timeIntervalSince1970 // number of seconds from 1970
+
         
         comments = []
         likes = []
@@ -72,7 +73,9 @@ class Media {
             
             "uid":          uid,
             "type":         type,
-            "createdTime":  createdTime,
+//            "createdTime":  createdTime,
+            "createdTime": FIRServerValue.timestamp(),
+
             "createdBy":    createdBy.toDictionary(),
             "caption":      caption
             
@@ -112,7 +115,7 @@ class Comment {
     var mediaUID: String
     var uid: String
     
-    var createdTime: Double
+    var createdTime: Double!
     var from: User
     
     var caption: String
@@ -123,7 +126,7 @@ class Comment {
         self.from = from
         self.caption = caption
         
-        self.createdTime = Date().timeIntervalSince1970
+//        self.createdTime = Date().timeIntervalSince1970
         
         ref = DatabaseReference.media.reference().child("\(mediaUID)/comments").childByAutoId()
         
@@ -135,7 +138,7 @@ class Comment {
         
         uid = dictionary["uid"] as! String
         mediaUID = dictionary["mediaUID"] as! String
-        createdTime = dictionary["createdTime"] as! Double
+//        createdTime = dictionary["createdTime"] as! Double
         caption = dictionary["caption"] as! String
         
         let userDict = dictionary["from"] as! [String: Any]
@@ -158,7 +161,8 @@ class Comment {
             
             "mediaUID":     mediaUID,
             "uid":          uid,
-            "createdTime":  createdTime,
+//            "createdTime":  createdTime,
+            "createdTime": FIRServerValue.timestamp(),
             "from":         from.toDictionary(),
             "caption":      caption
             
