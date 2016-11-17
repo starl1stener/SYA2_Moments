@@ -10,6 +10,7 @@
 		154919531DD5B81E002E16BA /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154919521DD5B81E002E16BA /* Media.swift */; };
 		15ABA8701DDDB17100FE7B57 /* MediaHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15ABA86F1DDDB17100FE7B57 /* MediaHeaderCell.swift */; };
 		15ABA8721DDDC0BC00FE7B57 /* MediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15ABA8711DDDC0BC00FE7B57 /* MediaTableViewCell.swift */; };
+		15ABA8741DDDCC4600FE7B57 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15ABA8731DDDCC4600FE7B57 /* CommentTableViewCell.swift */; };
 		18269BC31DD212400065D028 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18269BC21DD212400065D028 /* AppDelegate.swift */; };
 		18269BC81DD212400065D028 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18269BC61DD212400065D028 /* Main.storyboard */; };
 		18269BCA1DD212400065D028 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18269BC91DD212400065D028 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		154919521DD5B81E002E16BA /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		15ABA86F1DDDB17100FE7B57 /* MediaHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaHeaderCell.swift; sourceTree = "<group>"; };
 		15ABA8711DDDC0BC00FE7B57 /* MediaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaTableViewCell.swift; sourceTree = "<group>"; };
+		15ABA8731DDDCC4600FE7B57 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		18269BBF1DD212400065D028 /* SYA2_Moments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SYA2_Moments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18269BC21DD212400065D028 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18269BC71DD212400065D028 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				18269BE11DD257300065D028 /* NewsfeedTableViewController.swift */,
 				15ABA86F1DDDB17100FE7B57 /* MediaHeaderCell.swift */,
 				15ABA8711DDDC0BC00FE7B57 /* MediaTableViewCell.swift */,
+				15ABA8731DDDCC4600FE7B57 /* CommentTableViewCell.swift */,
 			);
 			name = Newsfeed;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				18269BE41DD257430065D028 /* SignupTableViewController.swift in Sources */,
 				18269BDC1DD21F5F0065D028 /* User.swift in Sources */,
 				18269BE81DD25D590065D028 /* ImagePickerHelper.swift in Sources */,
+				15ABA8741DDDCC4600FE7B57 /* CommentTableViewCell.swift in Sources */,
 				18269BD91DD219DE0065D028 /* FirebaseReference.swift in Sources */,
 				18269BDE1DD224DB0065D028 /* FIRImage.swift in Sources */,
 				18269BC31DD212400065D028 /* AppDelegate.swift in Sources */,

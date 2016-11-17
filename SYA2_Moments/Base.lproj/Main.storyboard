@@ -1137,7 +1137,7 @@
                                     <outlet property="viewAllCommentsButton" destination="3rV-tc-1Ku" id="9V2-v5-eNo"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="Trc-2x-Mlr">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="Trc-2x-Mlr" customClass="CommentTableViewCell" customModule="SYA2_Moments" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="663" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Trc-2x-Mlr" id="dGe-Lk-jTU">
@@ -1178,6 +1178,11 @@
                                         <constraint firstItem="YIX-19-GYi" firstAttribute="top" secondItem="6xx-Md-Cot" secondAttribute="bottom" id="vqT-nu-FqJ"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="commentTextLabel" destination="YIX-19-GYi" id="tIH-BU-PIl"/>
+                                    <outlet property="profileImageView" destination="bEH-3p-Nkn" id="yvK-oC-8tg"/>
+                                    <outlet property="usernameButton" destination="6xx-Md-Cot" id="hHh-3m-KWM"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
