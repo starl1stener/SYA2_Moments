@@ -13,6 +13,7 @@
 		15ABA8741DDDCC4600FE7B57 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15ABA8731DDDCC4600FE7B57 /* CommentTableViewCell.swift */; };
 		15ABA8781DDE13DB00FE7B57 /* MediaDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15ABA8771DDE13DB00FE7B57 /* MediaDetailTableViewController.swift */; };
 		18200B371DDDE78C000B0075 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18200B361DDDE78C000B0075 /* Comment.swift */; };
+		18200B391DDE318A000B0075 /* CommentComposerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18200B381DDE318A000B0075 /* CommentComposerViewController.swift */; };
 		18269BC31DD212400065D028 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18269BC21DD212400065D028 /* AppDelegate.swift */; };
 		18269BC81DD212400065D028 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18269BC61DD212400065D028 /* Main.storyboard */; };
 		18269BCA1DD212400065D028 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18269BC91DD212400065D028 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 		15ABA8731DDDCC4600FE7B57 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		15ABA8771DDE13DB00FE7B57 /* MediaDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaDetailTableViewController.swift; sourceTree = "<group>"; };
 		18200B361DDDE78C000B0075 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		18200B381DDE318A000B0075 /* CommentComposerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentComposerViewController.swift; sourceTree = "<group>"; };
 		18269BBF1DD212400065D028 /* SYA2_Moments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SYA2_Moments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18269BC21DD212400065D028 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18269BC71DD212400065D028 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			children = (
 				18269BE11DD257300065D028 /* NewsfeedTableViewController.swift */,
 				15ABA8771DDE13DB00FE7B57 /* MediaDetailTableViewController.swift */,
+				18200B381DDE318A000B0075 /* CommentComposerViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				15ABA8781DDE13DB00FE7B57 /* MediaDetailTableViewController.swift in Sources */,
 				18269BC31DD212400065D028 /* AppDelegate.swift in Sources */,
 				18269BE61DD257520065D028 /* WelcomeViewController.swift in Sources */,
+				18200B391DDE318A000B0075 /* CommentComposerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

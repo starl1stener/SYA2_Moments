@@ -9,6 +9,10 @@
 import UIKit
 import SAMCache
 
+protocol MediaTableViewCellDelegate: class {
+    func composeCommentButtonDidTapOnMedia(media: Media)
+}
+
 class MediaTableViewCell: UITableViewCell {
     
     @IBOutlet weak var mediaImageView: UIImageView!
@@ -32,6 +36,7 @@ class MediaTableViewCell: UITableViewCell {
     
     var cache = SAMCache.shared()
     
+    weak var delegate: MediaTableViewCellDelegate?
     
     func updateUI() {
         self.mediaImageView.image = nil
@@ -91,6 +96,8 @@ class MediaTableViewCell: UITableViewCell {
     }
     
     @IBAction func commentDidTap() {
+        
+        self.delegate?.composeCommentButtonDidTapOnMedia(media: self.media)
         
     }
     

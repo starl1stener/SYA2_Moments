@@ -77,6 +77,8 @@ class NewsfeedTableViewController: UITableViewController {
         
     }
     
+    
+    // NAVIGATION
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == Storyboard.showMediaDetailSegue {
@@ -85,6 +87,15 @@ class NewsfeedTableViewController: UITableViewController {
                 let destinationVC = segue.destination as! MediaDetailTableViewController
                 destinationVC.media = selectedMedia
                 destinationVC.currentUser = currentUser
+            }
+            
+        } else if segue.identifier == Storyboard.showCommentComposer {
+            
+            if let selectedMedia = sender as? Media {
+                
+                let destinationVC = segue.destination as! CommentComposerViewController
+                destinationVC.currentUser = currentUser
+                destinationVC.media = selectedMedia
             }
             
         }
@@ -119,6 +130,8 @@ extension NewsfeedTableViewController {
         cell.media = medias[indexPath.section]
         
         cell.selectionStyle = .none
+        
+        cell.delegate = self
         
         return cell
     }
@@ -187,7 +200,12 @@ extension NewsfeedTableViewController: UITabBarControllerDelegate {
 
 
 
-
+extension NewsfeedTableViewController: MediaTableViewCellDelegate {
+    
+    func composeCommentButtonDidTapOnMedia(media: Media) {
+        self.performSegue(withIdentifier: Storyboard.showCommentComposer, sender: media)
+    }
+}
 
 
 

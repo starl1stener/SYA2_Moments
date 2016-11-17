@@ -459,7 +459,6 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="commentDidTap" destination="4Pc-qp-gWl" eventType="touchUpInside" id="WBc-5U-yoo"/>
-                                                        <segue destination="3ef-fA-rTS" kind="show" identifier="ShowCommentComposer" id="OLq-vt-Heg"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrM-1n-dQB">
@@ -573,6 +572,7 @@
                             <nil key="action"/>
                         </segue>
                         <segue destination="ucv-so-bwX" kind="presentation" identifier="ShowWelcomeViewController" id="qZX-e3-7BD"/>
+                        <segue destination="3ef-fA-rTS" kind="show" identifier="ShowCommentComposer" id="ure-Rk-197"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5aJ-O2-E9T" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1038,7 +1038,7 @@
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="commentDidTap" destination="fcQ-cs-Ch2" eventType="touchUpOutside" id="eZY-o6-62T"/>
+                                                        <action selector="commentDidTap" destination="MPj-g1-wqs" eventType="touchUpInside" id="pT5-0n-BnX"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zxx-el-en2">
@@ -1213,13 +1213,13 @@
         <!--Title-->
         <scene sceneID="LE5-Tf-efx">
             <objects>
-                <viewController id="3ef-fA-rTS" sceneMemberID="viewController">
+                <viewController id="3ef-fA-rTS" customClass="CommentComposerViewController" customModule="SYA2_Moments" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oor-b2-F2N"/>
                         <viewControllerLayoutGuide type="bottom" id="1PF-yy-AV7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ENx-5J-Vfk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="t9" translatesAutoresizingMaskIntoConstraints="NO" id="4VX-n4-bDn">
@@ -1238,7 +1238,7 @@
                                 </state>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3Yg-9l-xse">
-                                <rect key="frame" x="60" y="118" width="299" height="730"/>
+                                <rect key="frame" x="60" y="118" width="299" height="630"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
@@ -1259,9 +1259,19 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="YBT-xB-wCk">
-                        <barButtonItem key="leftBarButtonItem" title="Post" id="TEG-Jv-1Jg"/>
+                        <barButtonItem key="leftBarButtonItem" title="Post" id="TEG-Jv-1Jg">
+                            <connections>
+                                <action selector="postDidTap" destination="3ef-fA-rTS" id="JpW-zw-GfL"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="captionTextView" destination="3Yg-9l-xse" id="ul6-XW-mom"/>
+                        <outlet property="postBarButtonItem" destination="TEG-Jv-1Jg" id="EcN-7L-3lM"/>
+                        <outlet property="profileImageView" destination="4VX-n4-bDn" id="qWl-4a-FXy"/>
+                        <outlet property="usernameButton" destination="wt0-5u-udm" id="HY3-m7-h9K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VgA-8d-v68" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1447,6 +1457,6 @@
         <image name="t9" width="370" height="370"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Wkj-2I-8tq"/>
+        <segue reference="ure-Rk-197"/>
     </inferredMetricsTieBreakers>
 </document>

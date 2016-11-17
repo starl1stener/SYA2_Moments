@@ -137,9 +137,6 @@ extension Media {
             (image, error) in
             
             completion(image,error)
-        
-        
-        
         })
         
         
@@ -156,6 +153,20 @@ extension Media {
             
             completion(media)
             
+        })
+    }
+    
+    
+    func observeNewComment(_ completion: @escaping (Comment) -> Void) {
+        
+        // .childAdded: (1) download everything for the first time, (2) download the new child added to the ref
+        
+        DatabaseReference.media.reference().child("\(uid)/comments").observe(.childAdded, with: { snapshot in
+        
+            let comment = Comment(dictionary: snapshot.value as! [String: Any])
+            
+            completion(comment)
+        
         })
     }
 }
