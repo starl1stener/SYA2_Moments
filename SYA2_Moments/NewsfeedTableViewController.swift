@@ -9,27 +9,27 @@
 import UIKit
 import Firebase
 
+public struct Storyboard {
+    static let showWelcome = "ShowWelcomeViewController"
+    static let postComposerNVC = "PostComposerNavigationVC"
+    
+    static let mediaCell = "MediaCell"
+    static let mediaHeaderCell = "MediaHeaderCell"
+    
+    static let mediaHeaderHeight: CGFloat = 57
+    static let mediaCellDefaultHeight: CGFloat = 597
+    
+    static let showMediaDetailSegue = "ShowMediaDetailSegue"
+    
+    static let commentCell = "CommentCell"
+    static let showCommentComposer = "ShowCommentComposer"
+}
+
 class NewsfeedTableViewController: UITableViewController {
-    
-    struct Storyboard {
-        static let showWelcome = "ShowWelcomeViewController"
-        static let postComposerNVC = "PostComposerNavigationVC"
-        
-        static let mediaCell = "MediaCell"
-        static let mediaHeaderCell = "MediaHeaderCell"
-        
-        static let mediaHeaderHeight: CGFloat = 57
-        static let mediaCellDefaultHeight: CGFloat = 597
-        
-        static let showMediaDetailSegue = "ShowMediaDetailSegue"
-        
-        static let commentCell = "CommentCell"
-        static let showCommentComposer = "ShowCommentComposer"
-    }
-    
+
     var imagePickerHelper: ImagePickerHelper!
     var currentUser: User?
-    var media = [Media]()
+    var medias = [Media]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,11 +69,26 @@ class NewsfeedTableViewController: UITableViewController {
     func fetchMedia() {
         
         Media.observeNewMedia { (media) in
-            if !self.media.contains(media) {
-                self.media.insert(media, at: 0)
+            if !self.medias.contains(media) {
+                self.medias.insert(media, at: 0)
                 self.tableView.reloadData()
             }
         }
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == Storyboard.showMediaDetailSegue {
+            
+            if let selectedMedia = sender as? Media {
+                let destinationVC = segue.destination as! MediaDetailTableViewController
+                destinationVC.media = selectedMedia
+                destinationVC.currentUser = currentUser
+            }
+            
+        }
+        
         
     }
 
@@ -86,11 +101,11 @@ class NewsfeedTableViewController: UITableViewController {
 extension NewsfeedTableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return media.count
+        return medias.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if media.count == 0 {
+        if medias.count == 0 {
             return 0
         } else {
             return 1
@@ -101,7 +116,7 @@ extension NewsfeedTableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.mediaCell, for: indexPath) as! MediaTableViewCell
         cell.currentUser = currentUser
         
-        cell.media = media[indexPath.section]
+        cell.media = medias[indexPath.section]
         
         cell.selectionStyle = .none
         
@@ -112,7 +127,7 @@ extension NewsfeedTableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.mediaHeaderCell) as! MediaHeaderCell
         
         cell.currentUser = currentUser
-        cell.media = media[section]
+        cell.media = medias[section]
         
         cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
@@ -122,7 +137,23 @@ extension NewsfeedTableViewController {
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return Storyboard.mediaHeaderHeight
     }
+    
 }
+
+// MARK: - UITableViewDelegate
+
+extension NewsfeedTableViewController {
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let selectedMedia = medias[indexPath.section]
+        
+        performSegue(withIdentifier: Storyboard.showMediaDetailSegue, sender: selectedMedia)
+        
+        
+    }
+}
+
 
 
 

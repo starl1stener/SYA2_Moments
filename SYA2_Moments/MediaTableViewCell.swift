@@ -36,7 +36,10 @@ class MediaTableViewCell: UITableViewCell {
     func updateUI() {
         self.mediaImageView.image = nil
         
-        if let image = cache?.object(forKey: "\(self.media.uid)") as? UIImage {
+        let mediaImageKey = "\(media.uid)-mediaImage"
+
+        
+        if let image = cache?.object(forKey: mediaImageKey) as? UIImage {
             self.mediaImageView.image = image
         } else {
             
@@ -45,7 +48,7 @@ class MediaTableViewCell: UITableViewCell {
                     self?.mediaImageView.image = image
                     
                     // caching image
-                    self?.cache?.setObject(image, forKey: "\((self?.media.uid)!)")
+                    self?.cache?.setObject(image, forKey: mediaImageKey)
                     
                 } else if error != nil {
                     
