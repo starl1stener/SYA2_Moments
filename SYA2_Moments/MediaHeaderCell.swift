@@ -30,7 +30,7 @@ class MediaHeaderCell: UITableViewCell {
             if let image = image {
                 self?.profileImageView.image = image
             } else {
-                print(error?.localizedDescription as Any)
+                print("Error occured: \(error?.localizedDescription)")
             }
         }
         
