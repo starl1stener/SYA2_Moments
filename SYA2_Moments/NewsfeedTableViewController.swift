@@ -35,22 +35,17 @@ class NewsfeedTableViewController: UITableViewController {
         super.viewDidLoad()
         
         // check if the user logged in or not
-        
         FIRAuth.auth()?.addStateDidChangeListener({ (auth, user) in
-            
             if let user = user {
-                
                 // signed in
-                
                 DatabaseReference.users(uid: user.uid).reference().observeSingleEvent(of: .value, with: { (snapshot) in
                     if let userDict = snapshot.value as? [String : Any] {
                         self.currentUser = User(dictionary: userDict)
+                        self.fetchMedia()
                     }
                 })
             } else {
-                
                 self.performSegue(withIdentifier: Storyboard.showWelcome, sender: nil)
-                
             }
         })
         
@@ -61,7 +56,7 @@ class NewsfeedTableViewController: UITableViewController {
         
         tableView.separatorColor = UIColor.clear
         
-        fetchMedia()
+        
     }
     
     
@@ -125,6 +120,7 @@ extension NewsfeedTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.mediaCell, for: indexPath) as! MediaTableViewCell
+        
         cell.currentUser = currentUser
         
         cell.media = medias[indexPath.section]

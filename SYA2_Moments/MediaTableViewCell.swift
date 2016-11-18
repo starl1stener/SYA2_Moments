@@ -28,6 +28,7 @@ class MediaTableViewCell: UITableViewCell {
     
     var media: Media! {
         didSet {
+            
             if currentUser != nil {
                 self.updateUI()
             }
