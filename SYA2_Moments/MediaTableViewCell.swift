@@ -94,6 +94,16 @@ class MediaTableViewCell: UITableViewCell {
     
     @IBAction func likeDidTap() {
         
+        if media.likes.contains(currentUser) {
+            likeButton.setImage(UIImage(named: "icon-like"), for: [])
+            media.unlikeBy(user: currentUser)
+        } else {
+            likeButton.setImage(UIImage(named: "icon-like-filled"), for: [])
+            media.likedBy(user: currentUser)
+            
+        }
+        
+        
     }
     
     @IBAction func commentDidTap() {

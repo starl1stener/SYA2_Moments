@@ -130,6 +130,12 @@ extension User {
         })
     }
     
+    func follow(user: User) {
+        self.follows.append(user)
+        let ref = DatabaseReference.users(uid: uid).reference().child("follows/\(user.uid)")
+        ref.setValue(user.toDictionary())
+    }
+    
 }
 
 

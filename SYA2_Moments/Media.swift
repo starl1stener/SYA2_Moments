@@ -139,13 +139,8 @@ extension Media {
             completion(image,error)
         })
         
-        
     }
-
-}
-
-
-extension Media {
+    
     class func observeNewMedia(_ completion: @escaping (Media) -> Void) {
         DatabaseReference.media.reference().observe(.childAdded, with: { snapshot in
             
@@ -169,10 +164,30 @@ extension Media {
         
         })
     }
+    
+    func likedBy(user: User) {
+        self.likes.append(user)
+        let ref = DatabaseReference.media.reference().child("\(uid)/likes/\(user.uid)")
+        
+        ref.setValue(user.toDictionary())
+        
+    }
+    
+    func unlikeBy(user: User) {
+        if let index = likes.index(of: user) {
+            likes.remove(at: index)
+            
+            let ref = DatabaseReference.media.reference().child("\(uid)/likes/\(user.uid)")
+            
+            ref.setValue(nil) // deleting liked user from likes
+        }
+    }
+    
 }
 
 
 
+// COMPARE METHOD (FOR "CONTAINS" FEATURE) - for checking if array constains current User
 
 extension Media: Equatable { }
 
