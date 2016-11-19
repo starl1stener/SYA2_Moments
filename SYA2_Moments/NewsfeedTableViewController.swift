@@ -26,11 +26,12 @@ public struct Storyboard {
 }
 
 class NewsfeedTableViewController: UITableViewController {
-
+    
     var imagePickerHelper: ImagePickerHelper!
     var currentUser: User?
     var medias = [Media]()
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,9 +39,12 @@ class NewsfeedTableViewController: UITableViewController {
         FIRAuth.auth()?.addStateDidChangeListener({ (auth, user) in
             if let user = user {
                 // signed in
+                
                 DatabaseReference.users(uid: user.uid).reference().observeSingleEvent(of: .value, with: { (snapshot) in
                     if let userDict = snapshot.value as? [String : Any] {
                         self.currentUser = User(dictionary: userDict)
+                        print("===NAG===: currentUser = \(self.currentUser?.username)")
+                        
                         self.fetchMedia()
                     }
                 })
@@ -56,14 +60,15 @@ class NewsfeedTableViewController: UITableViewController {
         
         tableView.separatorColor = UIColor.clear
         
-        
     }
     
     
     
     func fetchMedia() {
         
+        self.medias = []
         Media.observeNewMedia { (media) in
+    
             if !self.medias.contains(media) {
                 self.medias.insert(media, at: 0)
                 self.tableView.reloadData()
@@ -97,7 +102,7 @@ class NewsfeedTableViewController: UITableViewController {
         
         
     }
-
+    
     
 }
 
