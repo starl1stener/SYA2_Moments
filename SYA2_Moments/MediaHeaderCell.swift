@@ -71,8 +71,10 @@ class MediaHeaderCell: UITableViewCell {
         followButton.layer.masksToBounds = true
         
         if currentUser.follows.contains(media.createdBy) || media.createdBy.uid == currentUser.uid {
+            print("===NAG===: followButton.isHidden = true")
             followButton.isHidden = true
         } else {
+            print("===NAG===: followButton.isHidden = false")
             followButton.isHidden = false
         }
     }
