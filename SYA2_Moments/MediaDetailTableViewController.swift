@@ -23,7 +23,7 @@ class MediaDetailTableViewController: UITableViewController {
         tableView.allowsSelection = false
         
         tableView.estimatedRowHeight = Storyboard.mediaCellDefaultHeight
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         
         comments = media.comments
         tableView.reloadData()

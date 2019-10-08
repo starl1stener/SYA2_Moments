@@ -43,7 +43,7 @@ class NewsfeedTableViewController: UITableViewController {
                 DatabaseReference.users(uid: user.uid).reference().observeSingleEvent(of: .value, with: { (snapshot) in
                     if let userDict = snapshot.value as? [String : Any] {
                         self.currentUser = User(dictionary: userDict)
-                        print("===NAG===: currentUser = \(self.currentUser?.username)")
+                        print("===NAG===: currentUser = \(String(describing: self.currentUser?.username))")
                         
                         self.fetchMedia()
                     }
@@ -135,21 +135,6 @@ extension NewsfeedTableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.mediaHeaderCell) as! MediaHeaderCell
-        
-        cell.currentUser = currentUser
-        cell.media = medias[section]
-        
-        cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return Storyboard.mediaHeaderHeight
-    }
-    
 }
 
 // MARK: - UITableViewDelegate
@@ -164,10 +149,22 @@ extension NewsfeedTableViewController {
         
         
     }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.mediaHeaderCell) as! MediaHeaderCell
+        
+        cell.currentUser = currentUser
+        cell.media = medias[section]
+        
+        cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return Storyboard.mediaHeaderHeight
+    }
 }
-
-
-
 
 
 extension NewsfeedTableViewController: UITabBarControllerDelegate {
