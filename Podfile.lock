@@ -57,6 +57,26 @@ DEPENDENCIES:
   - SAMCache
   - VENTokenField
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - DGActivityIndicatorView
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseAuth
+    - FirebaseCore
+    - FirebaseDatabase
+    - FirebaseInstanceID
+    - FirebaseStorage
+    - FrameAccessor
+    - GoogleInterchangeUtilities
+    - GoogleNetworkingUtilities
+    - GoogleSymbolUtilities
+    - GoogleUtilities
+    - JSQMessagesViewController
+    - JSQSystemSoundPlayer
+    - SAMCache
+    - VENTokenField
+
 SPEC CHECKSUMS:
   DGActivityIndicatorView: 1942ae657a8d247c035f229422b2d15a8adbe5b6
   Firebase: be473484f0d515e72ffd04acf22f981773c23e58
@@ -78,4 +98,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 51c962f227cffd03bddc74fb5c09dea90f224328
 
-COCOAPODS: 1.1.0
+COCOAPODS: 1.7.0.beta.2
