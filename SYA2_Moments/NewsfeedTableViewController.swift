@@ -56,7 +56,7 @@ class NewsfeedTableViewController: UITableViewController {
         self.tabBarController?.delegate = self
         
         tableView.estimatedRowHeight = Storyboard.mediaCellDefaultHeight
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         
         tableView.separatorColor = UIColor.clear
         
@@ -102,8 +102,6 @@ class NewsfeedTableViewController: UITableViewController {
         
         
     }
-    
-    
 }
 
 
