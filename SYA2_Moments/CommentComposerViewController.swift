@@ -39,7 +39,7 @@ class CommentComposerViewController: UIViewController {
                     self?.profileImageView.image = image
                     
                 } else if error != nil {
-                    print("Error occured: \(error?.localizedDescription)")
+                    print("Error occured: \(String(describing: error?.localizedDescription))")
                 }
             })
             
@@ -58,12 +58,10 @@ class CommentComposerViewController: UIViewController {
         media.comments.append(comment)
         
         self.navigationController?.popViewController(animated: true)
-        
+        self.title = comment.caption
     }
     
-
 }
-
 
 
 extension CommentComposerViewController: UITextViewDelegate {
@@ -75,6 +73,7 @@ extension CommentComposerViewController: UITextViewDelegate {
         } else {
             postBarButtonItem.isEnabled = true
         }
+        textView.isHidden = postBarButtonItem.isEnabled
         
     }
     
