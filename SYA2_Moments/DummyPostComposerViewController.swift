@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DummyPostComposerViewController: UIViewController {
+class DummyPostComposerViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
