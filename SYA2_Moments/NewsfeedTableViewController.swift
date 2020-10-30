@@ -16,8 +16,8 @@ public struct Storyboard {
     static let mediaCell = "MediaCell"
     static let mediaHeaderCell = "MediaHeaderCell"
     
-    static let mediaHeaderHeight: CGFloat = 57
-    static let mediaCellDefaultHeight: CGFloat = 597
+    static let mediaHeaderHeight: CGFloat = 38
+    static let mediaCellDefaultHeight: CGFloat = 700
     
     static let showMediaDetailSegue = "ShowMediaDetailSegue"
     
@@ -62,6 +62,13 @@ class NewsfeedTableViewController: UITableViewController {
         
     }
     
+    func userSignedOut() {
+        do {
+            try FIRAuth.auth()?.signOut()
+        } catch {
+            print(error)
+        }
+    }
     
     
     func fetchMedia() {
@@ -156,7 +163,7 @@ extension NewsfeedTableViewController {
         cell.currentUser = currentUser
         cell.media = medias[section]
         
-        cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        cell.backgroundColor = .white
         
         return cell
     }
@@ -202,18 +209,3 @@ extension NewsfeedTableViewController: MediaTableViewCellDelegate {
         self.performSegue(withIdentifier: Storyboard.showCommentComposer, sender: media)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
