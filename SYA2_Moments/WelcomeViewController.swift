@@ -10,26 +10,21 @@ import UIKit
 import Firebase
 
 class WelcomeViewController: UIViewController {
-    
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         FIRAuth.auth()?.addStateDidChangeListener({ (auth, user) in
             
-            if let user = user {
-                
+            if user != nil {
                 self.dismiss(animated: false, completion: nil)
             } else {
-                
+                print("there's no user!")
             }
         })
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
     
     override var prefersStatusBarHidden: Bool {
