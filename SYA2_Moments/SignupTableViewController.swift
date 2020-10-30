@@ -10,7 +10,6 @@ import UIKit
 import Firebase
 
 class SignupTableViewController: UITableViewController {
-    
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var fullNameTextField: UITextField!
@@ -35,7 +34,6 @@ class SignupTableViewController: UITableViewController {
         
     }
     
-    
     func showAlert(withMessage message: String) {
         let errorAlert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -54,11 +52,11 @@ class SignupTableViewController: UITableViewController {
             showAlert(withMessage: "Enter your email")
             return
         }
-        guard (userNameTextField.text?.characters.count)! > 6 else {
+        guard (userNameTextField.text?.count)! > 6 else {
             showAlert(withMessage: "Username should contain 7 or more characters")
             return
         }
-        guard (passwordTextField.text?.characters.count)! > 6 else {
+        guard (passwordTextField.text?.count)! > 6 else {
             showAlert(withMessage: "Password should contain 7 or more characters")
             return
         }

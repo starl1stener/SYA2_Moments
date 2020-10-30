@@ -29,7 +29,7 @@ extension FIRImage {
     func saveProfileImage(_ userUID: String, _ completion: @escaping (Error?) -> Void) {
         
         let resisedImage = image.resized()
-        let imageData = UIImageJPEGRepresentation(resisedImage, 0.9)
+        let imageData = resisedImage.jpegData(compressionQuality: 0.9)
         
         ref = StorageReference.profileImages.reference().child(userUID)
         
@@ -48,7 +48,7 @@ extension FIRImage {
         // ~/images/uid
         
         let resizedImage = image.resized()
-        let imageData = UIImageJPEGRepresentation(resizedImage, 0.9)
+        let imageData = resizedImage.jpegData(compressionQuality: 0.9)
         
         ref = StorageReference.images.reference().child(uid)
         
@@ -128,23 +128,3 @@ private extension UIImage {
     }
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
