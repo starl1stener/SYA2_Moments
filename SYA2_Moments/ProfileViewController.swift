@@ -14,21 +14,10 @@ class ProfileViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-    }
-
-    
-    @IBAction func actionLogOutDidTap(_ sender: Any) {
-        
-        try! FIRAuth.auth()?.signOut()
-        
-        self.tabBarController?.selectedIndex = 0
-        
+        self.view.backgroundColor = .lightGray
     }
     
     func clearAllViewControllersWithLogout() {
-        
         let tabBarController = UIApplication.shared.keyWindow?.rootViewController as! UITabBarController
         
         let newsFeedNavVC = tabBarController.viewControllers?[0] as! UINavigationController
