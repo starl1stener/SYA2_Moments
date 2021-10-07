@@ -30,18 +30,11 @@ class ProfileViewController: UITableViewController {
         recentChatsVC.userSignedOut()
         
         SAMCache.shared().removeAllObjects()
-        
     }
     
     @IBAction func actionLogOutDidTap(_ sender: Any) {
-        
         try! FIRAuth.auth()?.signOut()
-        
         self.clearAllViewControllersWithLogout()
-        
         self.tabBarController?.selectedIndex = 0
-        
-        
     }
-
 }
