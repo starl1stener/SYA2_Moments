@@ -58,7 +58,7 @@ DEPENDENCIES:
   - VENTokenField
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - DGActivityIndicatorView
     - Firebase
     - FirebaseAnalytics
@@ -98,4 +98,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 51c962f227cffd03bddc74fb5c09dea90f224328
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.10.1
