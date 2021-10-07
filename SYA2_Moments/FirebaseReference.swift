@@ -9,9 +9,7 @@
 import Foundation
 import Firebase
 
-
 enum DatabaseReference {
-    
     case root
     case users(uid: String)
     case media                  // posts
@@ -23,7 +21,6 @@ enum DatabaseReference {
     }
     
     private var path: String {
-        
         switch self {
         case .root:
             return ""
@@ -35,20 +32,16 @@ enum DatabaseReference {
             return "chats"
         case .messages:
             return "messages"
-            
         }
     }
     
     // MARK: - Public
-    
     func reference() -> FIRDatabaseReference {
         return rootRef.child(path)
     }
-
 }
 
 enum StorageReference {
-    
     case root
     case images         // for post
     case profileImages  // for user
@@ -58,7 +51,6 @@ enum StorageReference {
     }
     
     private var path: String {
-        
         switch self {
         case .root:
             return ""
@@ -66,16 +58,13 @@ enum StorageReference {
             return "images"
         case .profileImages:
             return "profileImages"
-            
         }
     }
     
     // MARK: - Public
-
     func reference() -> FIRStorageReference {
         return baseRef.child(path)
     }
-    
 }
 
 
