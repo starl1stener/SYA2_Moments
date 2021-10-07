@@ -10,7 +10,6 @@ import Foundation
 import Firebase
 
 class User {
-    
     let uid: String
     var username: String
     var fullName: String
@@ -22,20 +21,23 @@ class User {
     var followedBy: [User]
     
     // MARK: - Initializers
-    
-    init(uid: String, username: String, fullName: String, bio: String, website: String, follows: [User], followedBy: [User], profileImage: UIImage?) {
+    init(uid: String,
+         username: String,
+         fullName: String,
+         bio: String,
+         website: String,
+         follows: [User],
+         followedBy: [User],
+         profileImage: UIImage?) {
         
         self.uid = uid
         self.username = username
         self.fullName = fullName
         self.bio = bio
         self.website = website
-        
         self.follows  = follows
         self.followedBy = followedBy
-        
         self.profileImage = profileImage
-        
     }
     
     init(dictionary: [String: Any]) {
@@ -44,8 +46,6 @@ class User {
         self.fullName = dictionary["fullName"] as! String
         self.bio = dictionary["bio"] as! String
         self.website = dictionary["website"] as! String
-        
-        // follows
         
         self.follows = []
         
@@ -58,7 +58,6 @@ class User {
         }
         
         // followed by
-        
         self.followedBy = []
         
         if let followedByDict = dictionary["followedBy"] as? [String: Any] {
@@ -68,8 +67,6 @@ class User {
                 }
             }
         }
-        
-        
     }
     
     func save(completion: @escaping (Error?) -> Void) {
@@ -100,8 +97,6 @@ class User {
         
     }
     
-    
-    
     func toDictionary() -> [String: Any] {
         return [
             "uid":      uid,
@@ -113,13 +108,10 @@ class User {
     }
 }
 
-
 extension User {
-    
     func share(newMedia: Media) {
         DatabaseReference.users(uid: uid).reference().child("media").childByAutoId().setValue(newMedia.uid)
     }
-    
     
     func downloadProfilePicture(completion: @escaping (UIImage?, NSError?) -> Void) {
         FIRImage.downloadProfileImage(uid, completion: { (image, error) in
