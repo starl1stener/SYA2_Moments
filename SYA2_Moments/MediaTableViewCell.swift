@@ -58,7 +58,7 @@ class MediaTableViewCell: UITableViewCell {
                     
                 } else if error != nil {
                     
-                    print("Error occured: \(error?.localizedDescription)")
+                    print("Error occured: \(error?.localizedDescription ?? "no value")")
                 }
                 
             }
@@ -87,8 +87,6 @@ class MediaTableViewCell: UITableViewCell {
         }
         
         
-        
-        
     }
     
     
@@ -97,10 +95,11 @@ class MediaTableViewCell: UITableViewCell {
         if media.likes.contains(currentUser) {
             likeButton.setImage(UIImage(named: "icon-like"), for: [])
             media.unlikeBy(user: currentUser)
+            shareButton.isEnabled = false
         } else {
             likeButton.setImage(UIImage(named: "icon-like-filled"), for: [])
             media.likedBy(user: currentUser)
-            
+            shareButton.isEnabled = true
         }
         
         

@@ -34,9 +34,6 @@ class MediaHeaderCell: UITableViewCell {
         
         let headerImageKey = "\(media.createdBy.uid)-headerImage"
 
-        
-//        if let image = cache?.object(forKey: "\(self.media.createdBy.uid)-headerImage") as? UIImage {
-        
         if let image = cache?.object(forKey: headerImageKey) as? UIImage {
 
             self.profileImageView.image = image
@@ -46,14 +43,11 @@ class MediaHeaderCell: UITableViewCell {
             media.createdBy.downloadProfilePicture { [weak self] (image, error) in
                 if let image = image {
                     self?.profileImageView.image = image
-                    
-                    // caching profile image
-                    // TODO: comment about need add ! unwrap
-//                    self?.cache?.setObject(image, forKey: "\((self?.media.createdBy.uid)!)-headerImage")
+
                     self?.cache?.setImage(image, forKey: headerImageKey)
                     
                 } else if error != nil {
-                    print("Error occured: \(error?.localizedDescription)")
+                    print("Error occured: \(String(describing: error?.localizedDescription))")
                 }
             }
         }
@@ -71,7 +65,7 @@ class MediaHeaderCell: UITableViewCell {
         followButton.layer.masksToBounds = true
         
         if currentUser.follows.contains(media.createdBy) || media.createdBy.uid == currentUser.uid {
-            print("===NAG===: followButton.isHidden = true")
+            
             followButton.isHidden = true
         } else {
             print("===NAG===: followButton.isHidden = false")

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		154919531DD5B81E002E16BA /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154919521DD5B81E002E16BA /* Media.swift */; };
+		15A1B664254C9836003D4268 /* RecentChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A1B663254C9836003D4268 /* RecentChatsViewController.swift */; };
 		15ABA8701DDDB17100FE7B57 /* MediaHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15ABA86F1DDDB17100FE7B57 /* MediaHeaderCell.swift */; };
 		15ABA8721DDDC0BC00FE7B57 /* MediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15ABA8711DDDC0BC00FE7B57 /* MediaTableViewCell.swift */; };
 		15ABA8741DDDCC4600FE7B57 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15ABA8731DDDCC4600FE7B57 /* CommentTableViewCell.swift */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		0CD58B318AA00F27968B0348 /* Pods-SYA2_Moments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYA2_Moments.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SYA2_Moments/Pods-SYA2_Moments.debug.xcconfig"; sourceTree = "<group>"; };
 		154919521DD5B81E002E16BA /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		15A1B663254C9836003D4268 /* RecentChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentChatsViewController.swift; sourceTree = "<group>"; };
 		15ABA86F1DDDB17100FE7B57 /* MediaHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaHeaderCell.swift; sourceTree = "<group>"; };
 		15ABA8711DDDC0BC00FE7B57 /* MediaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaTableViewCell.swift; sourceTree = "<group>"; };
 		15ABA8731DDDCC4600FE7B57 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				18269BE11DD257300065D028 /* NewsfeedTableViewController.swift */,
+				15A1B663254C9836003D4268 /* RecentChatsViewController.swift */,
 				15ABA8771DDE13DB00FE7B57 /* MediaDetailTableViewController.swift */,
 				18200B381DDE318A000B0075 /* CommentComposerViewController.swift */,
 			);
@@ -223,7 +226,6 @@
 				18269BBC1DD212400065D028 /* Frameworks */,
 				18269BBD1DD212400065D028 /* Resources */,
 				EF3E8433B2EEA421AA48A45E /* [CP] Embed Pods Frameworks */,
-				84A4A4970022D43C02181E21 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -261,6 +263,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -290,34 +293,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		84A4A4970022D43C02181E21 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SYA2_Moments/Pods-SYA2_Moments-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C3366F987606D3505C01D735 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SYA2_Moments-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EF3E8433B2EEA421AA48A45E /* [CP] Embed Pods Frameworks */ = {
@@ -326,13 +317,26 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SYA2_Moments/Pods-SYA2_Moments-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/FrameAccessor/FrameAccessor.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
+				"${BUILT_PRODUCTS_DIR}/SAMCache/SAMCache.framework",
+				"${BUILT_PRODUCTS_DIR}/VENTokenField/VENTokenField.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FrameAccessor.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAMCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VENTokenField.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SYA2_Moments/Pods-SYA2_Moments-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SYA2_Moments/Pods-SYA2_Moments-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -359,6 +363,7 @@
 				18269BDE1DD224DB0065D028 /* FIRImage.swift in Sources */,
 				15ABA8781DDE13DB00FE7B57 /* MediaDetailTableViewController.swift in Sources */,
 				18269BC31DD212400065D028 /* AppDelegate.swift in Sources */,
+				15A1B664254C9836003D4268 /* RecentChatsViewController.swift in Sources */,
 				18269BE61DD257520065D028 /* WelcomeViewController.swift in Sources */,
 				18200B391DDE318A000B0075 /* CommentComposerViewController.swift in Sources */,
 			);
@@ -490,7 +495,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.antonnovoselov.SYA2-Moments";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -505,7 +510,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.antonnovoselov.SYA2-Moments";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
