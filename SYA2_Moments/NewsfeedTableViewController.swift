@@ -36,7 +36,7 @@ class NewsfeedTableViewController: UITableViewController {
         super.viewDidLoad()
         
         // check if the user logged in or not
-        FIRAuth.auth()?.addStateDidChangeListener({ (auth, user) in
+        Auth.auth().addStateDidChangeListener({ (auth, user) in
             if let user = user {
                 // signed in
                 
@@ -64,7 +64,7 @@ class NewsfeedTableViewController: UITableViewController {
     
     func userSignedOut() {
         do {
-            try FIRAuth.auth()?.signOut()
+            try Auth.auth().signOut()
         } catch {
             print(error)
         }

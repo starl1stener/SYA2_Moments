@@ -31,7 +31,7 @@ class LoginViewController: UITableViewController {
             let email = emailTextField.text!
             let password = passwordTextField.text!
             
-            FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (firUser, error) in
+            Auth.auth().signIn(withEmail: email, password: password, completion: { (firUser, error) in
                 if let error = error {
                     self.showAlert(title: "Oops!", message: error.localizedDescription, buttonTitle: "OK")
                 } else {
