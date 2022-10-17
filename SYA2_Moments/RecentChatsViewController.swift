@@ -18,7 +18,7 @@ class RecentChatsViewController: UIViewController {
     
     func userSignedOut() {
         do {
-            try FIRAuth.auth()?.signOut()
+            try Auth.auth()?.signOut()
         } catch {
             print(error)
         }

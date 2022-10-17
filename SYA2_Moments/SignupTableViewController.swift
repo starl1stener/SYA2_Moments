@@ -75,7 +75,7 @@ class SignupTableViewController: UITableViewController {
         let email = emailTextField.text!
         let password = passwordTextField.text!
         
-        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (firUser, error) in
+        Auth.auth()?.createUser(withEmail: email, password: password, completion: { (firUser, error) in
             if error != nil {
                 // report error
                 self.showAlert(withMessage: "\(error?.localizedDescription)")
@@ -90,7 +90,7 @@ class SignupTableViewController: UITableViewController {
                         self.showAlert(withMessage: "\(error?.localizedDescription)")
                         
                     } else {
-                        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (firUser, error) in
+                        Auth.auth()?.signIn(withEmail: email, password: password, completion: { (firUser, error) in
                             if let error = error {
                                 // report error
                                 self.showAlert(withMessage: "\(error.localizedDescription)")

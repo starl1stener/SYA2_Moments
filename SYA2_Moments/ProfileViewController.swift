@@ -33,7 +33,7 @@ class ProfileViewController: UITableViewController {
     }
     
     @IBAction func actionLogOutDidTap(_ sender: Any) {
-        try! FIRAuth.auth()?.signOut()
+        try! Auth.auth()?.signOut()
         self.clearAllViewControllersWithLogout()
         self.tabBarController?.selectedIndex = 0
     }
