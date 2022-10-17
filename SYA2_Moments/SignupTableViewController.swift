@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseAuth
 
 class SignupTableViewController: UITableViewController {
     @IBOutlet weak var profileImageView: UIImageView!

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Firebase
+import FirebaseDatabase
 
 class Comment {
     var mediaUID: String

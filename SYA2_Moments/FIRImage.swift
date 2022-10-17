@@ -7,12 +7,14 @@
 //
 
 import Foundation
-import Firebase
+import FirebaseDatabase
+import FirebaseStorage
+
 class FIRImage {
     var image: UIImage
     var downloadURL: URL?
     var downloadLink: String!
-    var ref: FIRStorageReference!
+    var ref: MomentsStorageReference!
     
     init(image: UIImage) {
         self.image = image
@@ -23,7 +25,7 @@ extension FIRImage {
     func saveProfileImage(_ userUID: String, _ completion: @escaping (Error?) -> Void) {
         let resisedImage = image.resized()
         let imageData = resisedImage.jpegData(compressionQuality: 0.7)
-        ref = StorageReference.profileImages.reference().child(userUID)
+        ref = MomentsStorageReference.profileImages.reference().child(userUID)
         downloadLink = ref.description
         ref.put(imageData!, metadata: nil) { (metaData, error) in
             completion(error)
@@ -34,7 +36,7 @@ extension FIRImage {
         // ~/images/uid
         let resizedImage = image.resized()
         let imageData = resizedImage.jpegData(compressionQuality: 0.7)
-        ref = StorageReference.images.reference().child(uid)
+        ref = MomentsStorageReference.images.reference().child(uid)
         ref.put(imageData!, metadata: nil) { (metadata, error) in
             completion(error)
         }
@@ -43,7 +45,7 @@ extension FIRImage {
 
 extension FIRImage {
     class func downloadProfileImage(_ uid: String, completion: @escaping (UIImage?, Error?) -> Void) {
-        StorageReference.profileImages.reference().child(uid).data(withMaxSize: 1 * 1024 * 1024) { (imageData, error) in
+        MomentsStorageReference.profileImages.reference().child(uid).data(withMaxSize: 1 * 1024 * 1024) { (imageData, error) in
             if error == nil && imageData != nil {
                 let image = UIImage(data: imageData!)
                 completion(image, error)
@@ -54,7 +56,7 @@ extension FIRImage {
     }
     
     class func downloadImage(_ uid: String, completion: @escaping (UIImage?, Error?) -> Void) {
-        StorageReference.images.reference().child(uid).data(withMaxSize: 1 * 1024 * 1024) {
+        MomentsStorageReference.images.reference().child(uid).data(withMaxSize: 1 * 1024 * 1024) {
             imageData, error in
             
             if error == nil && imageData != nil {

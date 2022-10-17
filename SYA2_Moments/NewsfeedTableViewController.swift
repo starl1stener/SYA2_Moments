@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseAuth
 
 public struct Storyboard {
     static let showWelcome = "ShowWelcomeViewController"

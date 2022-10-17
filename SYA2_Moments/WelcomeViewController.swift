@@ -7,13 +7,13 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseAuth
 
 class WelcomeViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        FIRAuth.auth()?.addStateDidChangeListener({ (auth, user) in
+        Auth.auth().addStateDidChangeListener({ (auth, user) in
             
             if user != nil {
                 self.dismiss(animated: false, completion: nil)
