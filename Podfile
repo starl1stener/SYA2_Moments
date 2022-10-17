@@ -4,10 +4,11 @@ use_frameworks!
 target 'SYA2_Moments' do
 
 # Firebase
-pod 'Firebase'
-pod 'Firebase/Database'
-pod 'Firebase/Auth'
-pod 'Firebase/Storage'
+#pod 'Firebase'
+pod 'FirebaseDatabase'
+pod 'FirebaseAuth'
+pod 'FirebaseStorage'
+pod 'FirebaseAnalytics'
 
 # Utilities
 pod 'DGActivityIndicatorView'
